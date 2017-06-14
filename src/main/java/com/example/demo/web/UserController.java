@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.domain.User;
 
 @Controller
-
+@RequestMapping("/")
 public class UserController {
 	private List<User> userList=new ArrayList<User>();
 	
 	@RequestMapping("/")
 	public String index(){
-		return "bbs";
+		return "/bbs";
 	}
 	
 	@RequestMapping("/create")
@@ -31,7 +31,7 @@ public class UserController {
 		userList.add(user);
 		
 		model.addAttribute("userList", userList);
-		return "bbs";
+		return "/bbs";
 	}
 	
 	@ModelAttribute
